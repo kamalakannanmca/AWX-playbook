@@ -3,9 +3,9 @@
   hosts: localhost
   become: true
   gather_facts: false
-  use_backend=dnf 
+  
   tasks:
   - name: install the latest version of Apache
-    dnf:
+    yum3:
     name: httpd
     state: latest
