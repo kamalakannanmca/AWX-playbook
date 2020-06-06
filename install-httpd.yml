@@ -5,7 +5,7 @@
   gather_facts: false
   tasks:
   - name: Installing Httpd Service
-    yum:
+    dnf:
       name: "{{ packages }}"
     vars:
       packages:
