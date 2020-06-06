@@ -1,26 +1,11 @@
 ---
 - name: To Install Httpd Service
-  hosts: 172.31.70.47
+  hosts: localhost
   become: true
   gather_facts: false
-  use_backend=dnf
+  use_backend:dnf 
   tasks:
-  - name: Installing Httpd Service
-    
+  - name: install the latest version of Apache
     dnf:
-      name: "{{ packages }}"
-    vars:
-      packages:
-      - httpd
-      - httpd-tools
-  - name: Enable Apache on system reboot
-    service:
-       name: httpd
-       enabled: yes
-    notify:
-      -  restart httpd
-  handlers:
-    - name: restart httpd
-      service:
-        name: httpd
-        state: restarted
+    name: httpd
+    state: latest
