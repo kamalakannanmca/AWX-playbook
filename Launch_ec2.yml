@@ -1,0 +1,19 @@
+---
+- name: Launching an EC2 Instance
+  hosts: localhost
+  connection: local
+  become: false
+  gather_facts: false
+  tasks:
+  - name: Launching an EC2 Instance
+    ec2:
+      instance_type: t2.micro
+      image: ami-0915e09cc7ceee3ab
+      region: us-east-1
+      key_name: Laptop-Key
+      count: 1
+
+      group_id: sg-072102afb2f07eaad
+      wait: yes
+      instance_tags:
+         Name: Webserver
