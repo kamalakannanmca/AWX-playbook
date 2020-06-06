@@ -1,6 +1,6 @@
 ---
 - name: To Install Httpd Service
-  hosts: localhost
+  hosts: 172.31.70.47
   become: true
   gather_facts: false
   tasks:
