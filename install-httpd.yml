@@ -3,7 +3,7 @@
   hosts: localhost
   become: true
   gather_facts: false
-  use_backend:dnf 
+  use_backend=dnf 
   tasks:
   - name: install the latest version of Apache
     dnf:
