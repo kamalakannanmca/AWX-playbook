@@ -3,8 +3,10 @@
   hosts: 172.31.70.47
   become: true
   gather_facts: false
+  use_backend=dnf
   tasks:
   - name: Installing Httpd Service
+    
     dnf:
       name: "{{ packages }}"
     vars:
